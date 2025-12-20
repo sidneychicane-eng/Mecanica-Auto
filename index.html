@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
+    
     <title>CLBA Auto - Mecânica Especializada em Marracuene</title>
     <!-- META TAGS SEO -->
     <meta charset="UTF-8">
@@ -165,7 +166,54 @@
             color: #00eeff; 
             text-shadow: 0 0 10px rgba(0, 238, 255, 0.5); 
         }
-        
+        /* ==================== */
+/* BOTÕES DE IDIOMA */
+/* ==================== */
+
+.language-switcher {
+    display: flex;
+    gap: 8px;
+    margin-left: 25px;
+}
+
+.lang-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(157, 78, 221, 0.5);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 60px;
+}
+
+.lang-btn:hover {
+    background: rgba(157, 78, 221, 0.2);
+    border-color: #9d4edd;
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+    color: #0a0a0f;
+    border-color: #9d4edd;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(157, 78, 221, 0.3);
+}
+
+/* ==================== */
+/* RODAPÉ */
+/* ==================== */
+
+footer { 
+    background: #1a252f; 
+    color: white; 
+    padding: 50px 0; 
+    text-align: center; 
+    margin-top: 50px; 
+}
         footer { 
             background: #1a252f; 
             color: white; 
@@ -228,54 +276,140 @@
         }
     </style>
 </head>
+<script>
+   <!-- SISTEMA DE TRADUÇÃO (ADICIONE AQUI!) -->
+    <script>
+    // Sistema de tradução simples
+    const translations = {
+        'pt': {
+            'inicio': 'Início',
+            'servicos': 'Serviços',
+            'sobre': 'Sobre', 
+            'contacto': 'Contacto',
+            'titulo': 'CLBA Auto - Mecânica Automotiva em Marracuene',
+            'subtitulo': 'Serviços especializados com qualidade e garantia | Sidney Caetano Chicane',
+            'ligar': 'Ligar: (+258) 846665748',
+            'nossos_servicos': 'Nossos Serviços de Mecânica Automotiva',
+            'manutencao': 'Manutenção',
+            'desc_manutencao': 'Troca de óleo e revisões completas',
+            'reparos': 'Reparos',
+            'desc_reparos': 'Conserto mecânico geral',
+            'eletrica': 'Elétrica',
+            'desc_eletrica': 'Sistema elétrico automotivo',
+            'eletronica': 'Electrónica Automotiva',
+            'desc_eletronica': 'Diagnóstico com Scanner Automotivo',
+            'sobre_titulo': 'Sobre a CLBA Auto - Nossa História',
+            'proprietario': 'Proprietário:',
+            'empresa': 'Empresa:',
+            'endereco': 'Endereço:',
+            'email': 'Email:',
+            'contato_titulo': 'Entre em Contacto - CLBA Auto Marracuene',
+            'copyright': '© 2024 CLBA Auto - Sidney Caetano'
+        },
+        'en': {
+            'inicio': 'Home',
+            'servicos': 'Services',
+            'sobre': 'About',
+            'contacto': 'Contact',
+            'titulo': 'CLBA Auto - Automotive Mechanics in Marracuene',
+            'subtitulo': 'Specialized services with quality and guarantee | Sidney Caetano Chicane',
+            'ligar': 'Call: (+258) 846665748',
+            'nossos_servicos': 'Our Automotive Mechanics Services',
+            'manutencao': 'Maintenance',
+            'desc_manutencao': 'Oil change and complete reviews',
+            'reparos': 'Repairs',
+            'desc_reparos': 'General mechanical repair',
+            'eletrica': 'Electrical',
+            'desc_eletrica': 'Automotive electrical system',
+            'eletronica': 'Automotive Electronics',
+            'desc_eletronica': 'Diagnosis with Automotive Scanner',
+            'sobre_titulo': 'About CLBA Auto - Our History',
+            'proprietario': 'Owner:',
+            'empresa': 'Company:',
+            'endereco': 'Address:',
+            'email': 'Email:',
+            'contato_titulo': 'Contact Us - CLBA Auto Marracuene',
+            'copyright': '© 2024 CLBA Auto - Sidney Caetano'
+        }
+    };
 
+    // Função para trocar idioma
+    function changeLanguage(lang) {
+        // Atualizar todos os elementos com data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+        
+        // Salvar preferência
+        localStorage.setItem('preferred-language', lang);
+        
+        // Atualizar botões ativos
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
+
+    // Carregar idioma salvo
+    const savedLang = localStorage.getItem('preferred-language') || 'pt';
+    document.addEventListener('DOMContentLoaded', function() {
+        changeLanguage(savedLang);
+</script>
 <body>
     <header class="fade-in">
         <div class="container">
             <nav>
                 <div class="logo">CLBA AUTO</div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contacto</a></li>
-                </ul>
+               <ul class="nav-links">
+    <li><a href="#inicio" data-i18n="inicio">Início</a></li>
+    <li><a href="#servicos" data-i18n="servicos">Serviços</a></li>
+    <li><a href="#sobre" data-i18n="sobre">Sobre</a></li>
+    <li><a href="#contato" data-i18n="contacto">Contacto</a></li>
+    <!-- NOVO: BOTÕES DE IDIOMA -->
+    <li class="language-switcher">
+        <button onclick="changeLanguage('pt')" class="lang-btn active">🇵🇹 PT</button>
+        <button onclick="changeLanguage('en')" class="lang-btn">🇬🇧 EN</button>
+    </li>
+</ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero fade-in" id="inicio">
-        <div class="container">
-            <h1>CLBA Auto - Mecânica Automotiva em Marracuene</h1>
-            <p class="subtitle">Serviços especializados com qualidade e garantia | Sidney Caetano Chicane</p>
-            <a href="tel:+258846665748" class="btn">Ligar: (+258) 846665748</a>
-        </div>
-    </section>
+   <section class="hero fade-in" id="inicio">
+    <div class="container">
+        <h1 data-i18n="titulo">CLBA Auto - Mecânica Automotiva em Marracuene</h1>
+        <p class="subtitle" data-i18n="subtitulo">Serviços especializados com qualidade e garantia | Sidney Caetano Chicane</p>
+        <a href="tel:+258846665748" class="btn" data-i18n="ligar">Ligar: (+258) 846665748</a>
+    </div>
+</section>
 
     <section id="servicos" class="fade-in">
         <div class="container">
-            <h2>Nossos Serviços de Mecânica Automotiva</h2>
+            <h2 data-i18n="nossos_servicos">Nossos Serviços de Mecânica Automotiva</h2>
             <div class="services-grid">
+               <div class="service-card">
+    <span class="service-icon">🔧</span>
+    <h3 data-i18n="manutencao">Manutenção</h3>
+    <p data-i18n="desc_manutencao">Troca de óleo e revisões completas</p>
+</div>
+               <div class="service-card">
+    <span class="service-icon">🚗</span>
+    <h3 data-i18n="reparos">Reparos</h3>
+    <p data-i18n="desc_reparos">Conserto mecânico geral</p>
+</div>
                 <div class="service-card">
-                    <span class="service-icon">🔧</span>
-                    <h3>Manutenção</h3>
-                    <p>Troca de óleo e revisões completas</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🚗</span>
-                    <h3>Reparos</h3>
-                    <p>Conserto mecânico geral</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🔌</span>
-                    <h3>Elétrica</h3>
-                    <p>Sistema elétrico automotivo</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🛞</span>
-                    <h3>Electrónica Automotiva</h3>
-                    <p>Diagnóstico com Scanêr Automotivo</p>
-                </div>
+    <span class="service-icon">🔌</span>
+    <h3>Elétrica</h3>
+    <p>Sistema elétrico automotivo</p>
+</div>
+               <div class="service-card">
+    <span class="service-icon">🛞</span>
+    <h3 data-i18n="eletronica">Electrónica Automotiva</h3>
+    <p data-i18n="desc_eletronica">Diagnóstico com Scanner Automotivo</p>
+</div>
             </div>
         </div>
     </section>
@@ -334,3 +468,4 @@
     </script>
 </body>
 </html>
+
