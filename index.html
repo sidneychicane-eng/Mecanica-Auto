@@ -385,7 +385,135 @@ footer {
 :root {
   color-scheme: dark;
 }
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo CLBA AUTO</title>
+  <desc id="desc">Logotipo estilizado com diamante iluminado, carro metálico, engrenagem e fumaça</desc>
 
+  <defs>
+    <!-- Gradiente metálico para o texto e carro -->
+    <linearGradient id="metalGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e6e7e8"/>
+      <stop offset="0.4" stop-color="#bdbfc1"/>
+      <stop offset="0.6" stop-color="#8f9092"/>
+      <stop offset="1" stop-color="#d9d9da"/>
+    </linearGradient>
+
+    <!-- Gradiente de brilho para a borda -->
+    <linearGradient id="neon" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#cbd1d8" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Sombra / relevo -->
+    <filter id="drop" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="off"/>
+      <feMerge>
+        <feMergeNode in="off"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow para a borda neon -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Blur suave para fumaça -->
+    <filter id="smokeBlur">
+      <feGaussianBlur stdDeviation="22" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0
+                                           0 1 0 0 0
+                                           0 0 1 0 0
+                                           0 0 0 0.45 0" />
+    </filter>
+
+    <!-- Máscara para degradear a fumaça -->
+    <radialGradient id="smokeFade" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+
+    <style><![CDATA[
+      .bg { fill: #0b0b0b; }
+      .diamond { fill: #0e0e0e; stroke: url(#neon); stroke-width:30; filter:url(#glow); }
+      .frame-shadow { fill: none; stroke: rgba(0,0,0,0.5); stroke-width:40; }
+      .car { fill: url(#metalGrad); stroke: rgba(0,0,0,0.45); stroke-width:6; filter:url(#drop); }
+      .gear { fill: url(#metalGrad); stroke: rgba(0,0,0,0.35); stroke-width:6; filter:url(#drop); }
+      .logo-text { font-family: "Montserrat", "Arial Black", "Arial", sans-serif; font-weight:800; font-size:90px; fill: url(#metalGrad); stroke: rgba(0,0,0,0.45); stroke-width:4; filter:url(#drop); letter-spacing:4px; }
+      .smoke { fill: url(#smokeFade); filter:url(#smokeBlur); opacity:0.45; }
+    ]]></style>
+  </defs>
+
+  <!-- Fundo (para visualização; remova se for usar em fundo transparente) -->
+  <rect width="100%" height="100%" class="bg"/>
+
+  <!-- Diamond frame (rotated square) centered -->
+  <g transform="translate(512,512)">
+    <rect x="-320" y="-320" width="640" height="640" rx="18" class="diamond" transform="rotate(45)"/>
+    <!-- deep shadow under frame -->
+    <rect x="-300" y="-300" width="600" height="600" rx="12" fill="none" class="frame-shadow" transform="rotate(45)"/>
+  </g>
+
+  <!-- Smoke layers (suaves, atrás e na frente para profundidade) -->
+  <g>
+    <path class="smoke" d="M120 160 C 240 40, 500 60, 560 160 C 620 260, 840 220, 900 140 C 860 220, 700 300, 560 320 C 420 340, 240 360, 120 320 z" transform="translate(20,40) scale(0.9)"/>
+    <path class="smoke" d="M820 780 C 740 660, 540 640, 480 720 C 420 800, 260 780, 200 700 C 260 780, 420 840, 540 860 C 660 880, 820 840, 880 760 z" transform="translate(-40,-20) scale(0.95)"/>
+    <path class="smoke" d="M380 420 C 420 360, 520 340, 620 380 C 700 410, 760 420, 820 380 C 760 460, 660 480, 560 470 C 440 455, 420 460, 380 420 z" transform="translate(0,0) scale(0.9)"/>
+  </g>
+
+  <!-- Car silhouette (simplificado, estilizado) -->
+  <g transform="translate(512,380) scale(0.9)">
+    <path class="car"
+      d="M -360 40
+         C -280 -80, -40 -120, 160 -80
+         C 240 -60, 380 -40, 460 10
+         C 500 38, 540 100, 540 140
+         L 540 200
+         C 420 200, 330 200, 260 200
+         C 220 200, 200 190, 160 160
+         C 120 130, -40 130, -160 160
+         C -260 180, -360 180, -420 160
+         L -420 120
+         C -380 100, -340 80, -360 40
+         Z
+         M -220 200 a 60 60 0 1 0 120 0 a 60 60 0 1 0 -120 0
+         M 300 200 a 80 80 0 1 0 160 0 a 80 80 0 1 0 -160 0"
+      />
+    <!-- low-profile highlights -->
+    <path d="M -300 10 C -180 -40, 50 -70, 230 -40" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Gear on the rear (made of circle + teeth rectangles rotated) -->
+  <g transform="translate(690,360) scale(0.9)">
+    <circle class="gear" cx="0" cy="0" r="86" />
+    <!-- teeth: 10 little rectangles rotated around center -->
+    <g fill="url(#metalGrad)">
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(0)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(36)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(72)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(108)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(144)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(180)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(216)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(252)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(288)"/>
+      <rect x="-12" y="-110" width="24" height="34" rx="4" transform="rotate(324)"/>
+    </g>
+    <circle cx="0" cy="0" r="44" fill="#0b0b0b" stroke="rgba(0,0,0,0.4)" stroke-width="6"/>
+  </g>
+
+  <!-- Text: CLBA AUTO -->
+  <g transform="translate(512,720)">
+    <text class="logo-text" x="0" y="0" text-anchor="middle" alignment-baseline="middle">CLBA AUTO</text>
+  </g>
+
+</svg>
     </style>
 </head>
           <!-- ... conteúdo do site ... -->
@@ -746,6 +874,7 @@ footer {
     </script>
 </body>
 </html>
+
 
 
 
