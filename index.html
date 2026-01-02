@@ -1,228 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
-    <!-- ================= META ================= -->
     <meta charset="UTF-8">
     <title>CLBA Auto - Mecânica Especializada em Marracuene</title>
-    <meta name="description" content="CLBA Auto - Oficina mecânica especializada em Marracuene. Manutenção, reparos, elétrica e electrónica automotiva.">
+
+    <!-- SEO -->
+    <meta name="description" content="CLBA Auto - Oficina mecânica especializada em Marracuene, Habel-Jafar. Serviços automotivos profissionais.">
     <meta name="keywords" content="CLBA Auto, mecânica Marracuene, oficina automóvel Moçambique">
     <meta name="author" content="Sidney Caetano Chicane">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="CLBA Auto - Mecânica Especializada">
-    <meta property="og:description" content="Serviços automotivos com qualidade e garantia">
+    <!-- Open Graph -->
+    <meta property="og:title" content="CLBA Auto - Mecânica Especializada em Marracuene">
+    <meta property="og:description" content="Serviços automotivos de qualidade com profissionalismo.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sidneychicane-eng.github.io">
 
-    <link rel="icon" href="https://img.icons8.com/color/96/car-service.png">
+    <link rel="icon" href="https://img.icons8.com/color/96/000000/car-service.png">
 
-    <!-- ================= CSS ================= -->
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background:#0a0a0f;
-            color:#f0f0f0;
-            line-height:1.6;
-        }
-        .container { max-width:1200px; width:90%; margin:auto }
-
-        /* HEADER */
-        header {
-            background:#1a1a2a;
-            border-bottom:2px solid #9d4edd;
-        }
-        nav {
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:1rem 0;
-        }
-        .logo {
-            font-size:24px;
-            font-weight:bold;
-            color:#9d4edd;
-        }
-        .nav-links {
-            display:flex;
-            list-style:none;
-            align-items:center;
-            gap:20px;
-        }
-        .nav-links a {
-            color:white;
-            text-decoration:none;
-        }
-
-        /* HERO */
-        .hero {
-            text-align:center;
-            padding:70px 0;
-            background:linear-gradient(135deg,#1a0b2e,#2d1b4e);
-        }
-        .btn {
-            display:inline-block;
-            margin-top:20px;
-            padding:12px 25px;
-            background:#9d4edd;
-            color:#0a0a0f;
-            text-decoration:none;
-            border-radius:5px;
-            font-weight:bold;
-        }
-
-        /* SERVICES */
-        section { padding:60px 0 }
-        h2 {
-            text-align:center;
-            color:#9d4edd;
-            margin-bottom:40px;
-        }
-        .services-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
-        }
-        .service-card {
-            background:#1a1a2a;
-            padding:25px;
-            border-radius:10px;
-            text-align:center;
-        }
-
-        /* FOOTER */
-        footer {
-            background:#1a252f;
-            text-align:center;
-            padding:40px 0;
-        }
-
-        /* LANGUAGE */
-        .language-switcher button {
-            background:none;
-            border:1px solid #9d4edd;
-            color:white;
-            padding:5px 12px;
-            border-radius:20px;
-            cursor:pointer;
-        }
-        .language-switcher .active {
-            background:#9d4edd;
-            color:#0a0a0f;
-        }
-
-        /* WHATSAPP */
-        .whatsapp-float {
-            position:fixed;
-            right:20px;
-            bottom:20px;
-            width:65px;
-            height:65px;
-            background:#25D366;
-            color:white;
-            font-size:30px;
-            border-radius:50%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-decoration:none;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
+<header class="fade-in">
     <div class="container">
         <nav>
             <div class="logo">CLBA AUTO</div>
+
             <ul class="nav-links">
                 <li><a href="#inicio" data-i18n="inicio">Início</a></li>
                 <li><a href="#servicos" data-i18n="servicos">Serviços</a></li>
                 <li><a href="#sobre" data-i18n="sobre">Sobre</a></li>
                 <li><a href="#contato" data-i18n="contacto">Contacto</a></li>
-                <li class="language-switcher">
-                    <button onclick="changeLanguage('pt')" class="active">PT</button>
-                    <button onclick="changeLanguage('en')">EN</button>
-                </li>
             </ul>
+
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('pt')">🇵🇹 PT</button>
+                <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+            </div>
         </nav>
     </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section id="inicio" class="hero">
+<section class="hero fade-in" id="inicio">
     <div class="container">
         <h1 data-i18n="titulo">CLBA Auto - Mecânica Automotiva em Marracuene</h1>
-        <p data-i18n="subtitulo">Serviços especializados com qualidade e garantia</p>
-        <a href="tel:+258846665748" class="btn" data-i18n="ligar">Ligar</a>
+        <p data-i18n="subtitulo">Serviços especializados com qualidade e garantia | Sidney Caetano Chicane</p>
+        <a href="tel:+258846665748" class="btn" data-i18n="ligar">Ligar: (+258) 846665748</a>
     </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section id="servicos">
+<section id="servicos" class="fade-in">
     <div class="container">
-        <h2 data-i18n="nossos_servicos">Nossos Serviços</h2>
+        <h2 data-i18n="nossos_servicos">Nossos Serviços de Mecânica Automotiva</h2>
+
         <div class="services-grid">
-            <div class="service-card">🔧 <h3 data-i18n="manutencao">Manutenção</h3></div>
-            <div class="service-card">🚗 <h3 data-i18n="reparos">Reparos</h3></div>
-            <div class="service-card">🔌 <h3 data-i18n="eletrica">Elétrica</h3></div>
-            <div class="service-card">🛞 <h3 data-i18n="eletronica">Electrónica</h3></div>
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3 data-i18n="manutencao">Manutenção</h3>
+                <p data-i18n="desc_manutencao">Troca de óleo e revisões completas</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🚗</span>
+                <h3 data-i18n="reparos">Reparos</h3>
+                <p data-i18n="desc_reparos">Conserto mecânico geral</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔌</span>
+                <h3 data-i18n="eletrica">Elétrica</h3>
+                <p data-i18n="desc_eletrica">Sistema elétrico automotivo</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🛞</span>
+                <h3 data-i18n="eletronica">Electrónica Automotiva</h3>
+                <p data-i18n="desc_eletronica">Diagnóstico com Scanner Automotivo</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="sobre">
+<section id="sobre" class="fade-in">
     <div class="container">
-        <h2 data-i18n="sobre_titulo">Sobre a CLBA Auto</h2>
-        <p><strong>Proprietário:</strong> Sidney Caetano Chicane</p>
-        <p><strong>Local:</strong> Marracuene, Habel-Jafar</p>
+        <h2 data-i18n="sobre_titulo">Sobre a CLBA Auto - Nossa História</h2>
+        <p><strong data-i18n="proprietario">Proprietário:</strong> Sidney Caetano Chicane</p>
+        <p><strong data-i18n="empresa">Empresa:</strong> CLBA Auto - Fundada 2024</p>
+        <p><strong data-i18n="endereco">Endereço:</strong> Marracuene, Habel-Jafar</p>
+        <p><strong data-i18n="email">Email:</strong>
+            <a href="mailto:craftlandblackarena@gmail.com">craftlandblackarena@gmail.com</a>
+        </p>
     </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer id="contato">
+<footer id="contato" class="fade-in">
     <div class="container">
+        <h3 data-i18n="contato_titulo">Entre em Contacto - CLBA Auto Marracuene</h3>
         <p>📞 <a href="tel:+258846665748">(+258) 846665748</a></p>
         <p>✉️ <a href="mailto:craftlandblackarena@gmail.com">craftlandblackarena@gmail.com</a></p>
-        <p>&copy; 2024 CLBA Auto</p>
+        <p>📍 Marracuene, Habel-Jafar</p>
+        <p data-i18n="copyright">© 2024 CLBA Auto - Sidney Caetano</p>
     </div>
 </footer>
 
-<!-- ================= WHATSAPP ================= -->
+<!-- WhatsApp flutuante -->
 <a class="whatsapp-float"
-   href="https://wa.me/258846665748?text=Olá! Gostaria de informações sobre a CLBA Auto."
-   title="WhatsApp">💬</a>
+   href="https://wa.me/258846665748?text=Olá Sidney! Gostaria de informações sobre serviços da CLBA Auto."
+   title="Falar no WhatsApp">💬</a>
 
-<!-- ================= TRADUÇÃO ================= -->
-<script>
-const translations = {
-  pt:{inicio:"Início",servicos:"Serviços",sobre:"Sobre",contacto:"Contacto",titulo:"CLBA Auto - Mecânica Automotiva em Marracuene",subtitulo:"Serviços especializados com qualidade e garantia",ligar:"Ligar",nossos_servicos:"Nossos Serviços",manutencao:"Manutenção",reparos:"Reparos",eletrica:"Elétrica",eletronica:"Electrónica",sobre_titulo:"Sobre a CLBA Auto"},
-  en:{inicio:"Home",servicos:"Services",sobre:"About",contacto:"Contact",titulo:"CLBA Auto - Automotive Mechanics",subtitulo:"Specialized services with quality and guarantee",ligar:"Call",nossos_servicos:"Our Services",manutencao:"Maintenance",reparos:"Repairs",eletrica:"Electrical",eletronica:"Electronics",sobre_titulo:"About CLBA Auto"}
-};
+<!-- JS -->
+<script src="script.js"></script>
 
-function changeLanguage(lang){
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key=el.dataset.i18n;
-    el.textContent=translations[lang][key];
-  });
-  document.querySelectorAll(".language-switcher button").forEach(b=>b.classList.remove("active"));
-  event.target.classList.add("active");
-}
-</script>
-
-<!-- ================= SCHEMA ================= -->
+<!-- Schema -->
 <script type="application/ld+json">
 {
- "@context":"https://schema.org",
- "@type":"AutoRepair",
- "name":"CLBA Auto",
- "address":{"@type":"PostalAddress","addressLocality":"Marracuene","addressCountry":"MZ"},
- "telephone":"+258846665748",
- "founder":"Sidney Caetano Chicane"
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "CLBA Auto",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Habel-Jafar",
+    "addressLocality": "Marracuene",
+    "addressRegion": "Maputo",
+    "addressCountry": "MZ"
+  },
+  "telephone": "+258846665748",
+  "email": "craftlandblackarena@gmail.com",
+  "founder": "Sidney Caetano Chicane",
+  "foundingDate": "2024",
+  "url": "https://sidneychicane-eng.github.io"
 }
 </script>
 
