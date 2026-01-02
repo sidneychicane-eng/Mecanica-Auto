@@ -1,183 +1,830 @@
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
-
-    <!-- ================================================= -->
-    <!-- TÍTULO E META TAGS SEO -->
-    <!-- ================================================= -->
+    
     <title>CLBA Auto - Mecânica Especializada em Marracuene</title>
-
+    <!-- META TAGS SEO -->
     <meta charset="UTF-8">
     <meta name="description" content="CLBA Auto - Oficina mecânica especializada em Marracuene, Habel-Jafar. Serviços: manutenção preventiva, reparos gerais, elétrica automotiva, electrónica automotiva. Fundada por Sidney Caetano Chicane. Contacto: (+258) 846665748">
     <meta name="keywords" content="mecânica Marracuene, oficina auto Moçambique, reparo carros, Sidney Caetano, CLBA Auto, manutenção automóvel, electrónica automotiva, elétrica automotiva">
     <meta name="author" content="Sidney Caetano Chicane">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ================================================= -->
     <!-- OPEN GRAPH -->
-    <!-- ================================================= -->
     <meta property="og:title" content="CLBA Auto - Mecânica Especializada em Marracuene">
     <meta property="og:description" content="Serviços automotivos de qualidade com profissionalismo e tecnologia. Contacto: (+258) 846665748">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sidneychicane-eng.github.io">
-
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/car-service.png">
-
-    <!-- ================================================= -->
-    <!-- CSS PRINCIPAL (INTACTO) -->
-    <!-- ================================================= -->
+    
     <style>
-        /* === RESET E BASE === */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #0a0a0f; color: #f0f0f0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
         .container { width: 90%; max-width: 1200px; margin: auto; }
-
-        /* === HEADER / NAV === */
-        header {
-            background: #1a1a2a;
-            padding: 1rem 0;
-            border-bottom: 2px solid #9d4edd;
-            position: relative;
-            transition: border-color 0.3s ease;
+        
+        header { 
+            background: #1a1a2a; 
+            padding: 1rem 0; 
+            border-bottom: 2px solid #9d4edd; 
+            position: relative; 
+            transition: border-color 0.3s ease; 
         }
         header:hover { border-bottom-color: #00eeff; }
-
+        
+        header::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -2px; 
+            left: 0; 
+            width: 100%; 
+            height: 2px; 
+            background: #9d4edd; 
+            box-shadow: 0 0 10px #9d4edd; 
+            transition: all 0.3s ease; 
+        }
+        header:hover::after { 
+            background: #00eeff; 
+            box-shadow: 0 0 15px #00eeff; 
+        }
+        
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: bold; color: #9d4edd; }
-
-        /* === HERO === */
-        .hero {
-            background: linear-gradient(135deg, #1a0b2e, #2d1b4e);
-            text-align: center;
-            padding: 60px 0;
+        .logo { font-size: 24px; font-weight: bold; color: #9d4edd; transition: all 0.3s ease; }
+        .logo:hover { color: #00eeff; text-shadow: 0 0 10px #00eeff; }
+        
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 5px 10px; 
+            border-radius: 4px; 
+            transition: all 0.3s ease; 
+            position: relative; 
         }
-
-        /* === SERVIÇOS === */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+        .nav-links a:hover { color: #00eeff; background: rgba(0, 238, 255, 0.1); }
+        .nav-links a::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -5px; 
+            left: 10px; 
+            right: 10px; 
+            height: 2px; 
+            background: #00eeff; 
+            transform: scaleX(0); 
+            transition: transform 0.3s ease; 
         }
-
-        /* === BOTÕES DE IDIOMA === */
-        .language-switcher { display: flex; gap: 8px; margin-left: 25px; }
-
-        /* === WHATSAPP FLUTUANTE === */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            z-index: 1000;
+        .nav-links a:hover::after { transform: scaleX(1); }
+        
+        .hero { 
+            background: linear-gradient(135deg, #1a0b2e, #2d1b4e); 
+            text-align: center; 
+            padding: 60px 0; 
+            color: white; 
         }
+        .hero h1 { margin-bottom: 1rem; transition: all 0.3s ease; }
+        .hero h1:hover { text-shadow: 0 0 15px rgba(157, 78, 221, 0.8); }
+        
+        .btn { 
+            display: inline-block; 
+            background: linear-gradient(90deg, #9d4edd, #7b2cbf); 
+            color: #0a0a0f; 
+            padding: 12px 24px; 
+            border-radius: 4px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin-top: 20px; 
+            border: none; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4); 
+            transition: all 0.3s ease; 
+        }
+        .btn:hover { 
+            background: linear-gradient(90deg, #00eeff, #0099ff); 
+            color: #0a0a0f; 
+            box-shadow: 0 0 25px #00eeff; 
+            transform: translateY(-5px); 
+        }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin: 40px 0; 
+        }
+        
+        .service-card { 
+            background: linear-gradient(145deg, #1a1a2a, #2a2a3a); 
+            padding: 30px 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            border: 1px solid #333; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .service-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: -100%; 
+            width: 100%; 
+            height: 100%; 
+            background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.1), transparent); 
+            transition: left 0.6s ease; 
+        }
+        .service-card:hover::before { left: 100%; }
+        .service-card:hover { 
+            transform: translateY(-15px) scale(1.03); 
+            box-shadow: 0 20px 40px rgba(0, 238, 255, 0.3); 
+            border-color: #00eeff; 
+            color: #ffffff; 
+        }
+        
+        .service-card h3 { color: #9d4edd; margin-bottom: 10px; transition: color 0.3s ease; }
+        .service-card:hover h3 { color: #00eeff; }
+        
+        .service-icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            display: block; 
+            transition: all 0.3s ease; 
+        }
+        .service-card:hover .service-icon { transform: scale(1.2); color: #00eeff; }
+        
+        section { padding: 60px 0; }
+        
+        h2 { 
+            color: #9d4edd; 
+            margin-bottom: 30px; 
+            text-align: center; 
+            transition: all 0.3s ease; 
+        }
+        h2:hover { 
+            color: #00eeff; 
+            text-shadow: 0 0 10px rgba(0, 238, 255, 0.5); 
+        }
+        /* ==================== */
+/* BOTÕES DE IDIOMA */
+/* ==================== */
 
-        /* === LOGO CARD === */
-        .logo-card { display: grid; place-items: center; }
+.language-switcher {
+    display: flex;
+    gap: 8px;
+    margin-left: 25px;
+}
 
-        /* === DARK SCHEME === */
-        :root { color-scheme: dark; }
+.lang-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(157, 78, 221, 0.5);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 60px;
+}
+
+.lang-btn:hover {
+    background: rgba(157, 78, 221, 0.2);
+    border-color: #9d4edd;
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+    color: #0a0a0f;
+    border-color: #9d4edd;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(157, 78, 221, 0.3);
+}
+
+/* ==================== */
+/* RODAPÉ */
+/* ==================== */
+
+footer { 
+    background: #1a252f; 
+    color: white; 
+    padding: 50px 0; 
+    text-align: center; 
+    margin-top: 50px; 
+}
+        footer { 
+            background: #1a252f; 
+            color: white; 
+            padding: 50px 0; 
+            text-align: center; 
+            margin-top: 50px; 
+        }
+        footer h3 { color: #9d4edd; margin-bottom: 20px; transition: color 0.3s ease; }
+        footer h3:hover { color: #00eeff; }
+        
+        footer p { margin: 8px 0; transition: all 0.3s ease; }
+        footer p:hover { color: #00eeff; transform: translateX(5px); }
+        
+        /* WHATSAPP FLUTUANTE */
+.whatsapp-float { 
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px; 
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 36px; 
+    z-index: 1000; 
+    text-decoration: none; 
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    animation: float 3s ease-in-out infinite; 
+    background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+    color: #0a0a0f;
+    box-shadow: 0 5px 20px rgba(157, 78, 221, 0.5);
+}
+
+.whatsapp-float:hover { 
+    background: linear-gradient(135deg, #00eeff, #0099ff); 
+    box-shadow: 0 0 35px #00eeff; 
+    transform: scale(1.15) rotate(10deg); 
+    animation: none; 
+}
+
+@keyframes float { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-10px); } 
+}
+        
+        .whatsapp-float:hover { 
+            transform: scale(1.15) rotate(10deg); 
+            box-shadow: 0 0 35px #00eeff; 
+            animation: none; 
+        }
+        
+        a[href^="tel:"], a[href^="mailto:"] { 
+            color: #9d4edd; 
+            text-decoration: none; 
+            transition: all 0.3s ease; 
+            display: inline-block; 
+        }
+        a[href^="tel:"]:hover, a[href^="mailto:"]:hover { 
+            color: #00eeff; 
+            transform: translateX(5px); 
+            text-shadow: 0 0 10px rgba(0, 238, 255, 0.5); 
+        }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        /* Container do card do logo */
+.logo-card {
+  --frame-size: min(72vmin, 520px);
+  --glow-color: rgba(0, 200, 255, 0.45);
+  --accent: #00d1ff;
+  --text: #e6f7ff;
+  --bg: #0a0f14;
+
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  background: radial-gradient(120% 120% at 50% 60%, rgba(0,0,0,0.35), transparent 60%),
+              linear-gradient(180deg, rgba(10,15,20,0.9), rgba(10,15,20,0.6));
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moldura em diamante com brilho */
+.logo-frame {
+  width: var(--frame-size);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.5));
+}
+
+/* contorno em diamante */
+.logo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: rotate(45deg);
+  border-radius: 16px;
+  background:
+    conic-gradient(from 0deg, transparent 0 35%, var(--accent) 40% 60%, transparent 65% 100%),
+    radial-gradient(120% 120% at 50% 50%, rgba(0, 209, 255, 0.18), transparent 60%);
+  box-shadow:
+    0 0 22px var(--glow-color),
+    0 0 44px rgba(0, 209, 255, 0.25) inset;
+  pointer-events: none;
+}
+
+/* “fumaça” suave nas bordas */
+.logo-frame::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background:
+    radial-gradient(60% 60% at 20% 20%, rgba(255,255,255,0.06), transparent 60%),
+    radial-gradient(50% 50% at 80% 80%, rgba(255,255,255,0.07), transparent 60%);
+  filter: blur(18px);
+  opacity: 0.7;
+  animation: smokeFloat 9s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+@keyframes smokeFloat {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1); opacity: 0.55; }
+  50%  { transform: translate3d(1%, 2%, 0) scale(1.03); opacity: 0.7; }
+  100% { transform: translate3d(3%, -2%, 0) scale(1.06); opacity: 0.5; }
+}
+
+/* Imagem do logo */
+.logo-image {
+  width: 70%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  filter:
+    drop-shadow(0 2px 4px rgba(0,0,0,0.5))
+    drop-shadow(0 8px 24px rgba(0, 209, 255, 0.25));
+  z-index: 1;
+}
+
+/* Legenda */
+.logo-caption {
+  font: 600 1rem/1.2 "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .logo-card { padding: 1.25rem 0.75rem; }
+  .logo-image { width: 78%; }
+}
+
+/* Dark base (caso use tema escuro global) */
+:root {
+  color-scheme: dark;
+}
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo CLBA AUTO</title>
+  <desc id="desc">Logotipo estilizado com diamante iluminado, carro metálico, engrenagem e fumaça</desc>
+
+  <defs>
+    <!-- Gradiente metálico para o texto e carro -->
+    <linearGradient id="metalGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e6e7e8"/>
+      <stop offset="0.4" stop-color="#bdbfc1"/>
+      <stop offset="0.6" stop-color="#8f9092"/>
+      <stop offset="1" stop-color="#d9d9da"/>
+    </linearGradient>
+
+    <!-- Gradiente de brilho para a borda -->
+    <linearGradient id="neon" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#cbd1d8" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Sombra / relevo -->
+    <filter id="drop" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="off"/>
+      <feMerge>
+        <feMergeNode in="off"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow para a borda neon -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Blur suave para fumaça -->
+    <filter id="smokeBlur">
+      <feGaussianBlur stdDeviation="22" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0
+                                           0 1 0 0 0
+                                           0 0 1 0 0
+                                           0 0 0 0.45 0" />
+    </filter>
+
+    <!-- Máscara para degradear a fumaça -->
+    <radialGradient id="smokeFade" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+
+    <style><![CDATA[
+      .bg { fill: #0b0b0b; }
+      .diamond { fill: #0e0e0e; stroke: url(#neon); stroke-width:30; filter:url(#glow); }
+      .frame-shadow { fill: none; stroke: rgba(0,0,0,0.5); stroke-width:40; }
+      .car { fill: url(#metalGrad); stroke: rgba(0,0,0,0.45); stroke-width:6; filter:url(#drop); }
+      .gear { fill: url(#metalGrad); stroke: rgba(0,0,0,0.35); stroke-width:6; filter:url(#drop); }
+      .logo-text { font-family: "Montserrat", "Arial Black", "Arial", sans-serif; font-weight:800; font-size:90px; fill: url(#metalGrad); stroke: rgba(0,0,0,0.45); stroke-width:4; filter:url(#drop); letter-spacing:4px; }
+      .smoke { fill: url(#smokeFade); filter:url(#smokeBlur); opacity:0.45; }
+    ]]></style>
+  </defs>
+
+  <!-- Fundo (para visualização; remova se for usar em fundo transparente) -->
+  <rect width="100%" height="100%" class="bg"/>
+
+  <!-- Diamond frame (rotated square) centered -->
+  <g transform="translate(512,512)">
+    <rect x="-320" y="-320" width="640" height="640" rx="18" class="diamond" transform="rotate(45)"/>
+    <!-- deep shadow under frame -->
+    <rect x="-300" y="-300" width="600" height="600" rx="12" fill="none" class="frame-shadow" transform="rotate(45)"/>
+  </g>
+
+  <!-- Smoke layers (suaves, atrás e na frente para profundidade) -->
+  <g>
+    <path class="smoke" d="M120 160 C 240 40, 500 60, 560 160 C 620 260, 840 220, 900 140 C 860 220, 700 300, 560 320 C 420 340, 240 360, 120 320 z" transform="translate(20,40) scale(0.9)"/>
+    <path class="smoke" d="M820 780 C 740 660, 540 640, 480 720 C 420 800, 260 780, 200 700 C 260 780, 420 840, 540 860 C 660 880, 820 840, 880 760 z" transform="translate(-40,-20) scale(0.95)"/>
+    <path class="smoke" d="M380 420 C 420 360, 520 340, 620 380 C 700 410, 760 420, 820 380 C 760 460, 660 480, 560 470 C 440 455, 420 460, 380 420 z" transform="translate(0,0) scale(0.9)"/>
+  </g>
+
+  
     </style>
-
-    <!-- ================================================= -->
-    <!-- SVG DO LOGO (INTACTO, COMO ESTAVA) -->
-    <!-- ================================================= -->
-    <?xml version="1.0" encoding="utf-8"?>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-        <!-- SVG COMPLETO PRESERVADO -->
-    </svg>
-
 </head>
+          <!-- ... conteúdo do site ... -->
 
-<!-- ================================================= -->
-<!-- BODY (ESTRUTURA ORIGINAL PRESERVADA) -->
-<!-- ================================================= -->
-<body>
-
-    <!-- === HEADER === -->
-    <header class="fade-in">
-        <div class="container">
-            <nav>
-                <div class="logo">CLBA AUTO</div>
-
-                <ul class="nav-links">
-                    <li><a href="#inicio" data-i18n="inicio">Início</a></li>
-                    <li><a href="#servicos" data-i18n="servicos">Serviços</a></li>
-                    <li><a href="#sobre" data-i18n="sobre">Sobre</a></li>
-                    <li><a href="#contato" data-i18n="contacto">Contacto</a></li>
-                </ul>
-
-                <div class="language-switcher">
-                    <button onclick="changeLanguage('pt')" class="lang-btn active">🇵🇹 PT</button>
-                    <button onclick="changeLanguage('en')" class="lang-btn">🇬🇧 EN</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- === HERO === -->
-    <section class="hero fade-in" id="inicio">
-        <div class="container">
-            <h1 data-i18n="titulo">CLBA Auto - Mecânica Automotiva em Marracuene</h1>
-            <p data-i18n="subtitulo">Serviços especializados com qualidade e garantia</p>
-            <a href="tel:+258846665748" class="btn">Ligar</a>
-        </div>
-    </section>
-
-    <!-- === SERVIÇOS === -->
-    <section id="servicos" class="fade-in">
-        <div class="container">
-            <h2 data-i18n="nossos_servicos">Nossos Serviços</h2>
-        </div>
-    </section>
-
-    <!-- === SOBRE === -->
-    <section id="sobre" class="fade-in">
-        <div class="container">
-            <h2>Sobre a CLBA Auto</h2>
-        </div>
-    </section>
-
-    <!-- === FOOTER === -->
-    <footer id="contato" class="fade-in">
-        <div class="container">
-            <p>&copy; 2024 CLBA Auto - Sidney Caetano</p>
-        </div>
-    </footer>
-
-    <!-- ================================================= -->
-    <!-- SCRIPTS (TODOS PRESERVADOS, NÃO UNIFICADOS) -->
-    <!-- ================================================= -->
-
-    <!-- WhatsApp -->
+    <!-- WHATSAPP FLUTUANTE (NOVO - ADICIONE ISSO!) -->
     <script>
-        const whatsappBtn = document.createElement('a');
-        whatsappBtn.href = 'https://wa.me/258846665748';
-        whatsappBtn.className = 'whatsapp-float';
-        whatsappBtn.innerHTML = '💬';
-        document.body.appendChild(whatsappBtn);
+    // WhatsApp flutuante - VERSÃO SIMPLES E FUNCIONAL
+    const whatsappBtn = document.createElement('a');
+    whatsappBtn.href = 'https://wa.me/258846665748?text=Olá Sidney! Gostaria de informações sobre serviços da CLBA Auto.';
+    whatsappBtn.className = 'whatsapp-float';
+    whatsappBtn.innerHTML = '💬';
+    whatsappBtn.title = 'Falar no WhatsApp';
+    document.body.appendChild(whatsappBtn);
+    </script>
+</body>
+</html>
+    <!-- SISTEMA DE TRADUÇÃO (já existe) -->
+    <script>
+    // ... código de tradução que já tem ...
     </script>
 
-    <!-- Tradução -->
-    <script>
-        // sistema de tradução original preservado
-    </script>
-
-    <!-- Schema -->
+    <!-- Schema Markup (já existe) -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "AutoRepair",
-            "name": "CLBA Auto"
+    // ... schema markup ...
+    </script>
+</body>
+</html>
+<script>
+   <!-- SISTEMA DE TRADUÇÃO (ADICIONE AQUI!) -->
+    <script>
+    // Sistema de tradução simples
+    const translations = {
+        'pt': {
+            'inicio': 'Início',
+            'servicos': 'Serviços',
+            'sobre': 'Sobre', 
+            'contacto': 'Contacto',
+            'titulo': 'CLBA Auto - Mecânica Automotiva em Marracuene',
+            'subtitulo': 'Serviços especializados com qualidade e garantia | Sidney Caetano Chicane',
+            'ligar': 'Ligar: (+258) 846665748',
+            'nossos_servicos': 'Nossos Serviços de Mecânica Automotiva',
+            'manutencao': 'Manutenção',
+            'desc_manutencao': 'Troca de óleo e revisões completas',
+            'reparos': 'Reparos',
+            'desc_reparos': 'Conserto mecânico geral',
+            'eletrica': 'Elétrica',
+            'desc_eletrica': 'Sistema elétrico automotivo',
+            'eletronica': 'Electrónica Automotiva',
+            'desc_eletronica': 'Diagnóstico com Scanner Automotivo',
+            'sobre_titulo': 'Sobre a CLBA Auto - Nossa História',
+            'proprietario': 'Proprietário:',
+            'empresa': 'Empresa:',
+            'endereco': 'Endereço:',
+            'email': 'Email:',
+            'contato_titulo': 'Entre em Contacto - CLBA Auto Marracuene',
+            'copyright': '© 2024 CLBA Auto - Sidney Caetano'
+        },
+        'en': {
+            'inicio': 'Home',
+            'servicos': 'Services',
+            'sobre': 'About',
+            'contacto': 'Contact',
+            'titulo': 'CLBA Auto - Automotive Mechanics in Marracuene',
+            'subtitulo': 'Specialized services with quality and guarantee | Sidney Caetano Chicane',
+            'ligar': 'Call: (+258) 846665748',
+            'nossos_servicos': 'Our Automotive Mechanics Services',
+            'manutencao': 'Maintenance',
+            'desc_manutencao': 'Oil change and complete reviews',
+            'reparos': 'Repairs',
+            'desc_reparos': 'General mechanical repair',
+            'eletrica': 'Electrical',
+            'desc_eletrica': 'Automotive electrical system',
+            'eletronica': 'Automotive Electronics',
+            'desc_eletronica': 'Diagnosis with Automotive Scanner',
+            'sobre_titulo': 'About CLBA Auto - Our History',
+            'proprietario': 'Owner:',
+            'empresa': 'Company:',
+            'endereco': 'Address:',
+            'email': 'Email:',
+            'contato_titulo': 'Contact Us - CLBA Auto Marracuene',
+            'copyright': '© 2024 CLBA Auto - Sidney Caetano'
         }
+    };
+
+    // Função para trocar idioma
+    function changeLanguage(lang) {
+        // Atualizar todos os elementos com data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+        
+        // Salvar preferência
+        localStorage.setItem('preferred-language', lang);
+        
+        // Atualizar botões ativos
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
+
+    // Carregar idioma salvo
+    const savedLang = localStorage.getItem('preferred-language') || 'pt';
+    document.addEventListener('DOMContentLoaded', function() {
+        changeLanguage(savedLang);
+</script>
+        <!-- ... código do WhatsApp ... -->
+    <script>
+    const whatsappBtn = document.createElement('a');
+    whatsappBtn.href = 'https://wa.me/258846665748?text=Olá Sidney! Gostaria de informações sobre serviços da CLBA Auto.';
+    whatsappBtn.className = 'whatsapp-float';
+    whatsappBtn.innerHTML = '💬';
+    whatsappBtn.title = 'Falar no WhatsApp';
+    document.body.appendChild(whatsappBtn);
+    </script>
+
+    <!-- === SISTEMA DE TRADUÇÃO (ADICIONE ISSO!) === -->
+    <script>
+    // Sistema de tradução PT/EN
+    const translations = {
+        'pt': {
+            'inicio': 'Início',
+            'servicos': 'Serviços',
+            'sobre': 'Sobre',
+            'contacto': 'Contacto',
+            'titulo': 'CLBA Auto - Mecânica Automotiva em Marracuene',
+            'subtitulo': 'Serviços especializados com qualidade e garantia | Sidney Caetano Chicane',
+            'ligar': 'Ligar: (+258) 846665748',
+            'nossos_servicos': 'Nossos Serviços de Mecânica Automotiva',
+            'manutencao': 'Manutenção',
+            'desc_manutencao': 'Troca de óleo e revisões completas',
+            'reparos': 'Reparos',
+            'desc_reparos': 'Conserto mecânico geral',
+            'eletrica': 'Elétrica',
+            'desc_eletrica': 'Sistema elétrico automotivo',
+            'eletronica': 'Electrónica Automotiva',
+            'desc_eletronica': 'Diagnóstico com Scanner Automotivo',
+            'sobre_titulo': 'Sobre a CLBA Auto - Nossa História',
+            'proprietario': 'Proprietário:',
+            'empresa': 'Empresa:',
+            'endereco': 'Endereço:',
+            'email': 'Email:',
+            'contato_titulo': 'Entre em Contacto - CLBA Auto Marracuene',
+            'copyright': '© 2024 CLBA Auto - Sidney Caetano'
+        },
+        'en': {
+            'inicio': 'Home',
+            'servicos': 'Services',
+            'sobre': 'About',
+            'contacto': 'Contact',
+            'titulo': 'CLBA Auto - Automotive Mechanics in Marracuene',
+            'subtitulo': 'Specialized services with quality and guarantee | Sidney Caetano Chicane',
+            'ligar': 'Call: (+258) 846665748',
+            'nossos_servicos': 'Our Automotive Mechanics Services',
+            'manutencao': 'Maintenance',
+            'desc_manutencao': 'Oil change and complete reviews',
+            'reparos': 'Repairs',
+            'desc_reparos': 'General mechanical repair',
+            'eletrica': 'Electrical',
+            'desc_eletrica': 'Automotive electrical system',
+            'eletronica': 'Automotive Electronics',
+            'desc_eletronica': 'Diagnosis with Automotive Scanner',
+            'sobre_titulo': 'About CLBA Auto - Our History',
+            'proprietario': 'Owner:',
+            'empresa': 'Company:',
+            'endereco': 'Address:',
+            'email': 'Email:',
+            'contato_titulo': 'Contact Us - CLBA Auto Marracuene',
+            'copyright': '© 2024 CLBA Auto - Sidney Caetano'
+        }
+    };
+
+    function changeLanguage(lang) {
+        // Atualizar todos os textos
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+        
+        // Atualizar botões ativos
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.textContent.includes(lang === 'pt' ? 'PT' : 'EN')) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Salvar preferência
+        localStorage.setItem('preferred-language', lang);
+    }
+
+    // Carregar idioma salvo ao iniciar
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('preferred-language') || 'pt';
+        changeLanguage(savedLang);
+    });
+    </script>
+    <!-- === FIM DO SISTEMA DE TRADUÇÃO === -->
+
+    <!-- Schema Markup (já existe) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "CLBA Auto",
+        "description": "Oficina mecânica especializada em Marracuene, Moçambique. Serviços: manutenção, reparos, elétrica automotiva, electrónica automotiva.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Habel-Jafar",
+            "addressLocality": "Marracuene",
+            "addressRegion": "Maputo",
+            "addressCountry": "MZ"
+        },
+        "telephone": "+258846665748",
+        "email": "craftlandblackarena@gmail.com",
+        "openingHours": ["Mo-Fr 07:30-18:00", "Sa 08:00-14:00"],
+        "priceRange": "$$",
+        "founder": "Sidney Caetano Chicane",
+        "foundingDate": "2024",
+        "url": "https://sidneychicane-eng.github.io"
+    }
     </script>
 
 </body>
 </html>
+<body>
+    <header class="fade-in">
+        <div class="container">
+            <nav>
+                <div class="logo">CLBA AUTO</div>
+               <ul class="nav-links">
+    <li><a href="#inicio" data-i18n="inicio">Início</a></li>
+    <li><a href="#servicos" data-i18n="servicos">Serviços</a></li>
+    <li><a href="#sobre" data-i18n="sobre">Sobre</a></li>
+    <li><a href="#contato" data-i18n="contacto">Contacto</a></li>
+           <!-- ... botões de idioma ... -->
+</ul>
+    <!-- NOVO: BOTÕES DE IDIOMA -->
+    <li class="language-switcher">
+        <button onclick="changeLanguage('pt')" class="lang-btn active">🇵🇹 PT</button>
+        <button onclick="changeLanguage('en')" class="lang-btn">🇬🇧 EN</button>
+    </li>
+</ul>
+            </nav>
+        </div>
+    </header>
+
+   <section class="hero fade-in" id="inicio">
+    <div class="container">
+        <h1 data-i18n="titulo">CLBA Auto - Mecânica Automotiva em Marracuene</h1>
+        <p class="subtitle" data-i18n="subtitulo">Serviços especializados com qualidade e garantia | Sidney Caetano Chicane</p>
+        <a href="tel:+258846665748" class="btn" data-i18n="ligar">Ligar: (+258) 846665748</a>
+    </div>
+</section>
+
+    <section id="servicos" class="fade-in">
+        <section id="servicos" aria-label="Serviços">
+  <!-- Bloco do logo CLBA AUTO -->
+  <div class="logo-card" role="img" aria-label="Logo CLBA AUTO com moldura em diamante e efeito de fumaça">
+    <div class="logo-frame">
+      <picture>
+        <source srcset="assets/img/clba-auto-logo.webp" type="image/webp">
+        <img
+          src="assets/img/clba-auto-logo.png"
+          alt="CLBA AUTO: silhueta de carro esportivo sobre engrenagem em moldura de diamante"
+          class="logo-image"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+    </div>
+    <figcaption class="logo-caption">CLBA AUTO</figcaption>
+  </div>
+</section>
+
+        <div class="container">
+            <h2 data-i18n="nossos_servicos">Nossos Serviços de Mecânica Automotiva</h2>
+            <div class="services-grid">
+               <div class="service-card">
+    <span class="service-icon">🔧</span>
+    <h3 data-i18n="manutencao">Manutenção</h3>
+    <p data-i18n="desc_manutencao">Troca de óleo e revisões completas</p>
+</div>
+               <div class="service-card">
+    <span class="service-icon">🚗</span>
+    <h3 data-i18n="reparos">Reparos</h3>
+    <p data-i18n="desc_reparos">Conserto mecânico geral</p>
+</div>
+                <div class="service-card">
+    <span class="service-icon">🔌</span>
+    <h3>Elétrica</h3>
+    <p>Sistema elétrico automotivo</p>
+</div>
+               <div class="service-card">
+    <span class="service-icon">🛞</span>
+    <h3 data-i18n="eletronica">Electrónica Automotiva</h3>
+    <p data-i18n="desc_eletronica">Diagnóstico com Scanner Automotivo</p>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="fade-in">
+        <div class="container">
+<h2 data-i18n="sobre_titulo">Sobre a CLBA Auto - Nossa História</h2>
+           <p><strong data-i18n="proprietario">Proprietário:</strong> Sidney Caetano Chicane</p>
+           <p><strong data-i18n="empresa">Empresa:</strong> CLBA Auto - Fundada 2024</p>
+           <p><strong data-i18n="endereco">Endereço:</strong> Marracuene, Habel-Jafar</p>
+          <p><strong data-i18n="email">Email:</strong> <a href="mailto:craftlandblackarena@gmail.com">craftlandblackarena@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer id="contato" class="fade-in">
+        <div class="container">
+            <h3 data-i18n="contato_titulo">Entre em Contacto - CLBA Auto Marracuene</h3>
+            <p>📞 <a href="tel:+258846665748">(+258) 846665748</a></p>
+            <p>✉️ <a href="mailto:craftlandblackarena@gmail.com">craftlandblackarena@gmail.com</a></p>
+            <p>📍 Marracuene, Habel-Jafar</p><p>&copy; 2024 CLBA Auto - Sidney Caetano</p>
+        </div>
+    </footer>
+
+    <script>
+        const whatsappBtn = document.createElement('a');
+        whatsappBtn.href = 'https://wa.me/258846665748?text=Olá Sidney! Gostaria de informações sobre serviços da CLBA Auto.';
+        whatsappBtn.className = 'whatsapp-float';
+        whatsappBtn.innerHTML = '💬';
+        whatsappBtn.title = 'Falar no WhatsApp';
+        document.body.appendChild(whatsappBtn);
+    </script>
+
+    <!-- APENAS UM SCHEMA MARKUP (NO FINAL) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "CLBA Auto",
+        "description": "Oficina mecânica especializada em Marracuene, Moçambique. Serviços: manutenção, reparos, elétrica automotiva, electrónica automotiva.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Habel-Jafar",
+            "addressLocality": "Marracuene",
+            "addressRegion": "Maputo",
+            "addressCountry": "MZ"
+        },
+        "telephone": "+258846665748",
+        "email": "craftlandblackarena@gmail.com",
+        "openingHours": ["Mo-Fr 07:30-18:00", "Sa 08:00-14:00"],
+        "priceRange": "$$",
+        "founder": "Sidney Caetano Chicane",
+        "foundingDate": "2024",
+        "url": "https://sidneychicane-eng.github.io"
+    }
+    </script>
+</body>
+</html>          fim
